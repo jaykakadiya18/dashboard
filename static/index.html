@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Data Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        /* Container and card styling */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        
+        .chart-card {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fafafa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a4a4a;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+        
+        /* Chart header styling */
+        h2 {
+            text-align: left;
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 4px solid #5a67d8;
+        }
+        
+        /* Chart canvas styling */
+        .chart-container {
+            position: relative;
+            height: 450px;
+            width: 100%;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 200px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Traffic Data Dashboard</h1>
+        
+        <div class="chart-card">
+            <h2><i class="fas fa-globe-americas"></i> Geolocation Distribution</h2>
+            <div class="chart-container">
+                <canvas id="geoChart" ></canvas>
+            </div>
+        </div>
+        
+        <div class="chart-card">
+            <h2><i class="fas fa-desktop"></i> User Agent Distribution</h2>
+            <div class="chart-container">
+                <canvas id="userAgentChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="chart-card">
+            <h2><i class="fas fa-link"></i> Referral Sources</h2>
+            <div class="chart-container">
+                <canvas id="referChart"></canvas>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
